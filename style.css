@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --Gradient: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  --Pale-Blue: hsl(243, 100%, 93%);
+  --Grayish-Blue: hsl(229, 7%, 55%);
+  --Dark-Blue: hsl(228, 56%, 26%);
+  --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  font-family: "Raleway", sans-serif;
+  place-content: center;
+  background: url(./images/bg-mobile.png) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+main {
+  width: 85vw;
+  max-width: 900px;
+  border-radius: 10px;
+  display: grid;
+  gap: 20px;
+  /* grid-template-columns: 330px 1fr; */
+}
+/* first container  */
+
+.first-con {
+  background: var(--Dark-Blue);
+  padding: 40px 0 40px 40px;
+  border-radius: 12px;
+  border-top-right-radius: 40%;
+}
+
+.fa-solid,
+h1 {
+  color: white;
+  font-size: 2.4rem;
+}
+
+.header {
+  display: flex;
+  margin-bottom: 35px;
+}
+
+h1 {
+  margin-left: 10px;
+}
+
+.icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.icon-con {
+  padding: 10px;
+  background-color: var(--Very-Dark-Blue);
+  display: flex;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.icon {
+  max-width: 100%;
+}
+
+/* Second container */
+
+.second-con {
+  background: var(--Dark-Blue);
+  padding: 40px 40px 40px 40px;
+  border-radius: 12px;
+  display: grid;
+  position: relative;
+}
+
+.main-p {
+  text-align: center;
+  color: var(--Pale-Blue);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+span {
+  font-weight: 700;
+}
+
+/* Second container - space usage bars*/
+
+.space {
+  background-color: rgba(12, 18, 44, 0.6);
+  padding: 3px;
+  border-radius: 20px;
+  margin-top: 15px;
+}
+
+.bar {
+  background: var(--Gradient);
+  width: 70%;
+  height: 13px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 3px;
+}
+
+.circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.start-end {
+  display: flex;
+  justify-content: space-between;
+  color: var(--Pale-Blue);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* GB left box */
+
+.space-usage {
+  display: flex;
+  background: white;
+  justify-self: center;
+  position: absolute;
+  bottom: 0;
+  transform: translate(0, 50%);
+  padding: 12px 20px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-right: 10px;
+}
+
+.gb-left {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--Grayish-Blue);
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+/* Screens */
+@media screen and (min-width: 992px) {
+  body {
+    background: var(--Very-Dark-Blue) url(./images/bg-desktop.png) no-repeat;
+    background-size: contain;
+    background-position: 0 130%;
+  }
+  main {
+    grid-template-columns: 350px auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "a c"
+      "a b";
+  }
+  .first-con {
+    grid-area: a;
+  }
+
+  .space-usage {
+    bottom: 160px;
+    right: 7.5%;
+  }
+
+  .start-end {
+    margin-bottom: 0;
+  }
+
+  .second-con {
+    grid-area: b;
+  }
+
+  .main-p {
+    text-align: left;
+  }
+  .space-usage::before {
+    content: "";
+    position: absolute;
+    border-right: 1rem solid white;
+    border-top: 1rem solid white;
+    border-bottom: 1rem solid transparent;
+    border-left: 1rem solid transparent;
+    top: 50px;
+    right: 0.2px;
+  }
+}
